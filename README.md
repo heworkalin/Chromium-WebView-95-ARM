@@ -37,9 +37,9 @@ adb install AndroidSystemWebView.armeabi.apk
  
 编译说明
  
-本安装包严格遵循 Chromium 官方 Android Build Instructions 编译，仅通过以下 GN 参数进行架构和 API 适配，未对源码进行任何额外修改：
- 
-python  
+本安装包严格遵循 Chromium 官方 Android Build Instructions 编译，仅通过以下 GN 参数进行架构和 进行架构和 API 适配，未对源码进行任何额外修改：
+
+```python
 gn args out/Default
 
 target_os = "android"
@@ -49,10 +49,10 @@ target_cpu = "arm"
 is_debug = false
 is_official_build = true
 
-# 核心：设置安卓最小SDK API级别（安卓5=21），这是官方变量
+# 核心：设置安卓最小 SDK API 级别（安卓5=21），这是官方变量
 chrome_public_manifest_package = "com.android.webview"
 
-# 配套：设置NDK API级别，和SDK保持一致（必须同步）
+# 配套：设置 NDK API 级别，和 SDK 保持一致（必须同步）
 android32_ndk_api_level = 21
 android64_ndk_api_level = 21
 
@@ -71,3 +71,4 @@ use_official_google_api_keys = false
 
 # 禁用一些实验性(不稳定)功能，并隐藏WebView DevTools
 android_channel = "stable"
+```
