@@ -26,9 +26,11 @@
 ## 编译说明
  
 本安装包严格遵循 Chromium 官方 Android Build Instructions 编译，仅通过以下 GN 参数进行架构和 进行架构和 API 适配，未对源码进行任何额外修改：
+```shell
+gn args out/Default
+```
 
 ```python
-gn args out/Default
 
 target_os = "android"
 target_cpu = "arm"
